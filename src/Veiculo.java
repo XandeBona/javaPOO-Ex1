@@ -37,6 +37,6 @@ public class Veiculo {
 
     void abastecer(Double litros) {
         nivelTanque += litros;
-        System.out.println("Tanque atual: " + litros);
+        System.out.println("Tanque atual: " + nivelTanque);
     }
 }
