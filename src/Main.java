@@ -1,13 +1,10 @@
-import jdk.jshell.execution.JdiExecutionControlProvider;
-
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<String> contasBancarias = new ArrayList<>();
+
         System.out.println("-==============-");
         System.out.println("1 - Criar nova conta");
         System.out.println("2 - Depositar valor em uma conta");
@@ -35,7 +32,6 @@ public class Main {
                 saldo = sc.nextDouble();
 
                 conta = new ContaBancaria(titular, numeroConta, saldo);
-                contasBancarias.add(String.valueOf(conta));
 
             }
 
@@ -61,7 +57,7 @@ public class Main {
             }
 
             else if (escolha == 5) {
-                System.out.println(contasBancarias);
+                conta.listar();
             }
 
             //Para obrigar o usuário a escolher uma opção válida
@@ -69,7 +65,8 @@ public class Main {
                 System.out.println("Escolha um número válido!");
             }
 
-            System.out.print("Escolha uma opção: ");
+            System.out.println();
+            System.out.print("Escolha uma das opções: ");
             escolha = sc.nextInt();
 
 
